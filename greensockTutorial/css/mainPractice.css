@@ -1,0 +1,33 @@
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2fr;
+      grid-template-columns: 1fr 1fr 2fr;
+  height: 100px;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.grid-item {
+  height: 100%;
+  background-color: #444;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.grid-item__1 {
+  background-color: goldenrod;
+}
+
+.grid-item__2 {
+  background-color: lightcoral;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+.grid-item__3 {
+  background-color: aqua;
+}
