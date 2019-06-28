@@ -1,0 +1,16 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "git.ignoreMissingGitWarning": true,
+    "liveSassCompile.settings.formats":[
+        // This is Default.
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css/"
+        },
+    ],
+    "liveSassCompile.settings.generateMap":false,
+    "git.path": "E:\\Program Files\\Git\\bin",
+    "workbench.iconTheme": "vscode-great-icons",
+    "javascript.updateImportsOnFileMove.enabled": "always"
+}
