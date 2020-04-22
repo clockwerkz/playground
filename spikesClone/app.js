@@ -10,9 +10,10 @@ bird.src="images/bird.png";
 let bX = 50;
 let bY = 250;
 let bDY = 1;
-let speed = 1.3 ;
-let gravity = 0.2;
+let speed = 2.4 ;
+let gravity = 0.15;
 numTriangles = 5;
+jumpSpeed = -5
 let rT = [];
 
 
@@ -64,7 +65,7 @@ function checkCollision(x,y) {
 }
 
 document.addEventListener('keydown', function(e){
-    bDY = -5;
+    bDY = jumpSpeed;
 });
 
 function isAtEdge() {
