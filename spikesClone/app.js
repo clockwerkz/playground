@@ -9,11 +9,12 @@ let bird = new Image();
 bird.src="images/bird.png";
 let bX = 50;
 let bY = 250;
+let bDY = 1;
 let speed = 1.3 ;
-let gravity = 1;
+let gravity = 0.2;
 numTriangles = 5;
 let rT = [];
-let jump = 0;
+
 
 function renderRightTriangles(topPosition) {
     ctx.beginPath();
@@ -47,12 +48,9 @@ function draw() {
         speed = -speed;
     }
     bX = bX + speed;
-    bY = (jump <= 0) ? bY + gravity : bY - jump;
-    if (jump > 0) {
-        jump -= 1;
-    } 
-    gravity += 0.01;
-    for (leti= i=0; i<rT.length; i++) {
+    bY += bDY;
+    bDY += gravity; 
+    for (let i=0; i<rT.length; i++) {
         renderRightTriangles(rT[i]);
         checkCollision(canvas.width-50, rT[i]+25); 
     }
@@ -66,8 +64,7 @@ function checkCollision(x,y) {
 }
 
 document.addEventListener('keydown', function(e){
-    gravity = 1;
-    jump = 15;
+    bDY = -5;
 });
 
 function isAtEdge() {
