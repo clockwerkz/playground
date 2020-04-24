@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 //     console.log(req.query);
 //     res.send(`<h1>Hello from the ${req.query.name}!</h1>`);
 // });
-
+//DB_URI is from the .env file that is in the root of the project
 mongoose.connect(process.env.DB_URI, { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
