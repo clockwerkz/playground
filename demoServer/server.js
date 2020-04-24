@@ -26,6 +26,9 @@ mongoose.connect(process.env.DB_URI, {
     .catch((err) => console.error("Error:",err));
 app.use(bodyParser.json());
 
+app.get('/test', (req,res)=> {
+    res.status(200).send("Connected to the back end!");
+});
 
 app.get('/profile/:id', function(req,res){
     let id = req.params.id;
