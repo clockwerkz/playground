@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+
 app.get('/profiles', function(req,res){
     return res.status(200).json(data);
 });
