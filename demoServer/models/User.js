@@ -20,6 +20,9 @@ const UserSchema = new Schema({
     },
     desiredTripDates: {
         type: [String]
+    },
+    token: {
+        type: String
     }
 });
 

@@ -12,11 +12,7 @@ const { v4 } = require('uuid');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// app.get('/hello', function (req, res){
-//     console.log(req.query);
-//     res.send(`<h1>Hello from the ${req.query.name}!</h1>`);
-// });
-//DB_URI is from the .env file that is in the root of the project
+
 mongoose.connect(process.env.DB_URI, { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -28,17 +24,33 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-app.get('/profiles', function(req,res){
-    return res.status(200).json(data);
+
 app.get('/test', (req,res)=> {
-    res.status(200).send("Connected to the back end!");
+    res.status(200).send({msg: "Connected to the back end!"});
 });
 
-app.get('/profile/:id', function(req,res){
-    let id = req.params.id;
-    User.findById(id)
-    .then(user => res.status(200).send(user))
-    .catch(err => res.status(400).send({ err : "User Profile Not Found" }));
+async function authenticate(req, res, next) {
+    console.log("Authenticate");
+    let token = req.header("rc-auth-token");
+    if (token) {
+        let user = await User.findOne({ token });
+        if (user) {
+            req.user = user;
+        }
+    } 
+    next();
+}
+
+app.use(authenticate);
+
+//Protect API route
+
+app.get('/profile', authenticate, function(req,res){
+    if (req.user) {
+        console.log(req.user);
+        return res.status(200).send(req.user);
+    }
+    return res.status(400).send({ err : "User Profile Not Found" });
 });
 
 app.post('/profile', function(req,res){
@@ -54,26 +66,64 @@ app.post('/profile', function(req,res){
     }
 });
 
-
-app.put('/profile/:id', function(req,res){
-    let id = req.params.id;
-    let profile= req.body;
-    User.findByIdAndUpdate(id, {$set: { ...profile }}, {new: true})
-    .then(user => res.status(200).send(user))
-    .catch(err => res.status(400).send({ err }));
+app.post('/login', async function(req, res) {
+    try {
+        const { email, password } = req.body;
+        let user = await User.findOne({ email });
+        if (user && user.password === password ) {
+            let token = v4();
+            user.token = token;
+            await user.save();
+            res.status(200).send({token}); 
+        } else {
+            return res.status(400).send({ err : "incorrect info"});
+        }   
+    } catch (err) {
+        res.status(400).send({err})
+    }
 });
 
-app.delete('/profile/:id', function(req,res){
-    const id = req.params.id;
-    User.findByIdAndDelete(id)
-    .then(user => {
-        if (user!==null) {
-            res.status(200).send({msg : `User id ${id} was successfully deleted.`});
-        } else {
-            res.status(400).send({ err: "User Not Found" });
+app.get('/logout', authenticate, async function(req, res) {
+    if (req.user) {
+        let id = req.user.id;
+        let savedUser = await  User.findByIdAndUpdate(id, {$set: { "token":"" }}, {new: true});
+        return res.status(200).send(savedUser);
+    } else {
+        return res.status(400).send(err);
+    }
+});
+
+
+app.put('/profile', authenticate, async function(req,res){
+    try {
+        if (req.user) {
+            let id = req.user.id;
+            let profile = req.body;
+            let savedUser = await  User.findByIdAndUpdate(id, {$set: { ...profile }}, {new: true});
+            return res.status(200).send(savedUser);
         }
-    })
-    .catch(err => res.status(400).send({ err }));
+        return res.status(400).send({ err : "Error Updating User"});
+    } catch (err) {
+        return res.status(400).send(err);
+    }
+});
+
+app.delete('/profile', authenticate, async function(req,res){
+    try {
+        if (req.user) {
+            const id = req.user.id;
+            let user = await User.findByIdAndDelete(id);
+            if (user!==null) {
+                return res.status(200).send({msg : `User id ${id} was successfully deleted.`});
+            } else {
+                return res.status(400).send({ err: "User Not Found" });
+            }
+        } else {
+            return res.status(400).send({ err : "Error Deleting User"});
+        }
+    } catch(err) {
+        return res.status(400).send({ err });
+    }
 });
 
 
