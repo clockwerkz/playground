@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olympian</title>
+<!--google fonts-->
+<link href="https://fonts.googleapis.com/css?family='Tungsten-Medium', Impact, 'Arial Narrow Bold', sans-serif;" rel="stylesheet">
+<!-- font-awesome 5 cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<!--flexbox framework-->
+<link href="css/blueprint.css" rel="stylesheet" type="text/css">
+<!--animation css-->
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<!--your styles-->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/mobile.css" type="text/css"/>
+
+
+<!--wow animatons-->
+<script src="js/wow.min.js"></script>
+<script>
+              new WOW().init();
+              </script>
+              
+<!--cdn jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- <link rel="stylesheet" href="animate.min.css"> -->
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+      <img src="img/silhouette3.png" alt="Climber-logo">
+      <i class="fas fa-bars" id="mobile-btn"></i>
+    </div>
+    <ul class="navbar-items hide">
+      
+        <li><a href="#one">Olympics</a></li>
+        <li><a href="#stats">About</a></li>
+        <li><a href="#two">Motto</a></li>
+        <li ><a href="#three">Social</a></li>
+        <li ><a href="#six">Sponsor</a></li>
+        
+      </ul>
+  </nav>
+
+
+<div class="row" id="hero">	
+  <h1 class="tracking-out-expand-fwd">Brooke<br>
+    Raboutou
+  </h1>
+</div>
+
+<video playsinline autoplay muted loop poster="img/mobile_hero.jpg" id="bgvid">
+	<!--replace with your video file-->
+  <source src="img/videoplayback.mp4" type="video/mp4">
+</video>
+
+<!--first section-->
+<div id="one">
+  <!-- <h1 class="background-name" data-wow-delay="2s" class="text">Brooke <br>  Raboutou </h1> -->
+  <div class="wow fadeIn" data-wow-delay="2s">
+    <div class="rings">
+      <h5>Sport Climbing 2020</h5>
+      <img src="img/olympic-rings-4.png" alt="rings"> 
+      </div>
+     
+</div>
+  
+	<!-- <h1 class="title-heading">Sport Climbing - Olympics 2020, Tokyo</h1> -->
+ 
+</div>
+
+
+
+
+<div id="stats" class="bouldering-wall">
+  <div class="annotation" id="annotation-1">
+    <i class="fas fa-info-circle"></i>
+    <p class="annotation-text">Ninth in the World Championship for Speed, Lead & Bouldering</p>
+  </div>
+  <div class="annotation" class="info-icon" id="annotation-2">
+    <i class="fas fa-info-circle"></i><p>First American to qualify for Tokyo, Olympics in Sport Climbing</p></div>
+  <div class="annotation" id="annotation-3">
+    <i class="fas fa-info-circle"></i><p>Daughter of former climbing world cup champions <br> Robyn Erbesfield-Raboutou and Didier Raboutou</p></div>
+  <div class="annotation" id="annotation-4">
+    <i class="fas fa-info-circle"></i><p>Hometown: Boulder, Colorado</p></div>
+  <div class="annotation" id="annotation-5">
+    <i class="fas fa-info-circle"></i><p><img src="img/peer.gif" alt="Quote"></p></div>
+</div>
+
+<!--second section-->
+<div class="row" id="two">  
+
+  <div><h4 class="light-power--right">"Turn Pressure...<h4>
+    <h4 class="light-power--left">Into Power"<h4></h4>
+  </div>
+
+    
+</div
+
+<!--third section-->
+<div id="three">
+  <h1 class="light-motivation"></h1>
+  <ul class="instagram-images">
+    <li>
+      <a href="https://www.instagram.com/brookeclimbs/?hl=en">
+        <p>
+          <img src="./img/Insta.png" alt="">
+        </p>
+        <div class="instagram_img img--1"></div>
+      </a>
+    </li>    
+    <li>
+      <a href="https://www.facebook.com/BrookeRaboutou/"><p><img src="./img/facebook.png" alt="Facebook"></p><div class="instagram_img img--2"></div></a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=8al-TslJ9KA"><p><img src="./img/youtube-icon.png" alt="youtube"></p><div class="instagram_img img--3"></div></a>
+    </li>
+  </ul>
+</div>
+<div id="six">
+  <h1 id="shop-section" class="wow fadeInRight">Shop the latest in climbing gear </h1>
+  <div class="row" id="gear">
+    
+    <div class="column four merchandise">
+      <a href="https://www.adidasoutdoor.com/five-ten-anasazi-lv-pro-women%27s-climbing-shoe/BTM96.html?dwvar_BTM96_color=Easy_Coral&cgid=women-climb-shoes#start=1
+      ">
+      <img src="img/climbingshoe_1.jpg" alt="climbing-shoe"></a>
+      <h1>Adidas Terrex</h1>
+      <span>Climbing Shoe</span>
+      <p class="price">$170.00</p>
+      <p>FIVE TEN WOMEN'S CLIMBING SHOE</p>
+      <p><button>Shop</button></p>
+    </div>
+
+    <div class="column four merchandise">
+      <a href="https://www.gear.com/so-ill-climbing-gear-crash-pad/p/8385244?utm=rec">
+      <img a href="https://www.gear.com/so-ill-climbing-gear-crash-pad/p/8385244?utm=rec" src="./img/crashpad.jpg" alt="crashpad"></a>
+      <h1>So iLL</h1>
+      <span>Crashpad</span>
+      <p class="price">$229.95</p>
+      <p>Seafoam Crashpad</p>
+      <p><button>Shop</button></p>
+    </div>
+
+    <div class=" column four merchandise">
+      <a href="https://www.gear.com/so-ill-climbing-gear-beastmaker-2000-hangboard/p/8465064?utm=mf">
+      <img src="img/hangboard.jpg" alt="Hangboard" ></a>
+      <h1>Five Ten</h1>
+      <span>Hangboard</span>
+      <p class="price">$109.00</p>
+      <p>Beastmaker 2000 Hangboard</p>
+      <p><button>Shop</button></p>
+    </div>
+
+  </div>
+	
+</div>
+
+<footer>
+  <ul class="footer_nav">
+    
+    <li class="footer_item"><a href="https://en.wikipedia.org/wiki/Brooke_Raboutou">Press</a></li>
+    <li class="footer_item"><a href="https://www.teamusa.org/usa-climbing/athletes/Brooke-Raboutou">Team USA</a></li class="footer_item">
+    <l class="footer_item"i><a href="https://www.adidasoutdoor.com/on/demandware.store/Sites-AO-Site/default/Life-Athletes?cid=brooke-raboutou">Sponsor</a></li>
+  </ul>
+  <!-- Put Pipe here or divider -->
+  <div class="footer_divider"></div>
+  <ul class="footer_nav footer-right">
+    <li class="footer_item"><a href="https://www.facebook.com/BrookeRaboutou/">Facebook</a></li>
+    <li class="footer_item"><a href="https://www.youtube.com/watch?v=8al-TslJ9KA">Youtube</a></li>
+    <li class="footer_item"><a href="https://www.instagram.com/brookeclimbs/?hl=en">Instagram</a></li>
+    
+  </ul>
+
+</footer>
+  
+  <div class="column two"></div>
+</div>
+<script src="js/rellax.js"></script> 
+<script>
+    	// var rellax = new Rellax('.rellax', {
+      //   // center: true
+      //   callback: function(position) {
+      //       // callback every position change
+      //       console.log(position);
+      //   }
+      // });
+      document.getElementById('mobile-btn').addEventListener('click', function(){
+        document.querySelector('.navbar-items').classList.toggle('hide');
+      });
+      document.querySelectorAll('.navbar-items li').forEach(li => {
+        li.addEventListener('click', function(){
+          document.querySelector('.navbar-items').classList.toggle('hide');
+        });
+      });
+</script> 
+
+</body>
+</html>
