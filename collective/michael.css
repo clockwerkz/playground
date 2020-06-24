@@ -1,0 +1,243 @@
+header,body
+{
+position: relative;
+width: 1440px;
+height: 1010px;
+background-color: #BFD0DC;
+
+}
+
+
+html{
+	top:9082px
+	left:13526px;
+}
+
+
+.main-nav
+{
+	position: fixed;
+	list-style: none;
+	top:0px;
+	width: 100%;
+
+}
+
+.main-nav ul
+{
+	float: right;
+	right: 52;
+	left: 748;
+	margin-top: -130px;
+
+}
+
+.main-nav ul li{
+	display: inline-block;
+	padding: 200px 34px;
+	letter-spacing: 0.1em;
+
+}
+
+.main-nav ul li a
+{
+	color:#29346F;;
+	text-decoration: none;
+	font-family: "Montserrat", sans-serif;
+	font-size:25px;
+}
+
+#side{
+position: absolute;
+width: 238px;
+height: 97.77px;
+left: 90px;
+top: 20px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 900;
+font-size: 31.5px;
+line-height: 109.9%;
+/* or 34px */
+
+letter-spacing: 0.1em;
+
+color: #29346F;
+}
+#side a{
+	text-decoration: none;
+	color:#29346F;
+}
+
+hr{
+display: block;
+
+width: 250px;
+line-height: 0px;
+left:390px;
+top: 437px;
+margin-left: -15%;
+margin-top: -1%;
+border: 2px solid #FFFFFF;
+} 
+
+
+ h1{
+position: absolute;
+width: 989px;
+height: 61px;
+left: 90px;
+top: 160px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 45px;
+line-height: 40px;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+
+
+}
+
+h4 a
+{
+position: absolute;
+width: 810px;
+height: 50px;
+left: 90px;
+top: 210px;
+
+font-family: Sentinel;
+text-decoration: none;
+font-style: italic;
+font-weight: 325;
+font-size: 30px;
+line-height: 85px;
+letter-spacing: 0.05em;
+
+color: #29346F;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 30px;
+}
+
+
+#poem1{
+width: 300px;
+height: 400px;
+left: 60px;
+top: 437px;
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+}
+
+
+#poem2{
+width: 300px;
+height: 400px;
+left: 738px;
+top: 437px;
+ border: 2px solid #FFFFFF;
+box-sizing: border-box;
+}
+
+
+
+#poem3{
+width: 300px;
+height: 400px;
+left: 1416px;
+top: 437px;
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+}
+
+
+#poem4{
+width: 300px;
+height: 400px;
+left: 2094px;
+top: 437px;
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+}
+
+.slide-date{
+position: absolute;
+width: 315.64px;
+height: 40.4px;
+left: -40px;
+top: 5px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 22px;
+/* or 22px */
+
+
+color: #29346F
+}
+
+.slide-title{
+position: absolute;
+width: 380px;
+height: 40px;
+left: -40px;
+top: 14px;
+
+font-family: "Montserrat", sans-serif;
+font-weight: 300;
+font-size: 30px;
+line-height: 109.9%;
+/* or 38px */
+
+
+color: #29346F;
+}
+
+.slide-text{
+position: absolute;
+width: 250px;
+height: 154px;
+left: -40px;
+top: 30px;
+
+font-family: Sentinel;
+font-style: italic;
+font-weight: 325;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: 0.05em;
+
+color: #29346F;
+}
+.copy{
+width: 300px;
+color: #29346F;
+margin-top: 400px;
+font-family: "Sentinel"
+}
+
+
+.flex { display: -webkit-flex; display: flex; -webkit-flex-direction: row;  
+flex-direction: row; -webkit-justify-content: flex-start; 
+justify-content: flex-start;}
+
+.slider-wrapper div {position: relative;}
+.slider-wrapper {margin-top: -900px;  margin-left:30px}
+.slide-image {height: 400px;}
+.slide-image img {width: 300px; cursor: pointer;}
+.slide-content {width: 300px; color: #fff; padding:0vw 5vw 0vw 5vw;}
+.slide-bullet {width: 0.5vw; height: 0.5vw; border-radius: 200%; position: relative; margin-left: 1.2vw;}
+.slide-nav {margin-left: 64vw; margin-top: -5.5vw;}
