@@ -12,6 +12,11 @@ body {
     background-color: #FFE3DD;
 }
 
+a {
+    color: #29346F;
+    text-decoration: none;
+}
+
 /* NAV */
 
 nav {
@@ -148,6 +153,9 @@ nav {
 .josh-work {
     background-image: url('/josh/scanj.jpg');
 }
+
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 1300px) {
     .gallery-img {

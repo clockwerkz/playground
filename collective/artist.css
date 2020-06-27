@@ -1,0 +1,96 @@
+body {
+    background-color: #EDCDBA;
+}
+
+/** ARTIST PAGE **/
+#artist {
+    padding: 0 5%;
+}
+.artist-title {
+    color: #9B1E13;
+    font-size: 3rem;
+    font-weight: 325;
+    margin-top: 3rem;
+}
+.artist-subtitle {
+    margin: 1rem 0 2rem;
+}
+.artist-subtitle a {
+    font-family: serif;
+    font-style: italic;
+    font-weight: 325;
+    font-size: 30px;
+}
+.works-index {
+    display: flex;
+    flex-wrap: wrap;
+}
+.entry {
+    display: flex;
+    max-height: 400px;
+    width: 45%;
+    margin: 2.4rem 1rem;
+}
+
+.entry-img {
+    width: 50%;
+}
+
+.entry-info {
+    width: 50%;
+    border-top: 2px solid #9B1E13;
+    padding-left: 1rem;
+}
+
+.entry-img img {
+    height: auto;
+    width: 100%;
+    border: 2px solid #9B1E13;
+}
+
+.entry-date {
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+.entry-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 1.5rem 0;
+}
+
+.entry-description {
+    font-style: italic;
+}
+
+@media screen and (max-width: 900px) {
+    .entry-title {
+        font-size: 26px;
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .works-index {
+        justify-content: center;
+    }
+    .entry {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .entry {
+        width: 90%;
+    }
+    .entry-date {
+        font-size: 15px;
+    }
+    .entry-title {
+        margin: 0.5rem 0;
+        font-size: 20px;
+    }
+    .entry-description {
+        font-size: 15px;
+    }
+}
