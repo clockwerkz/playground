@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don't Touch The Spikes</title>
+    <style>
+        .modal {
+            font-family:Arial, Helvetica, sans-serif;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            background-color: #034141;
+            text-align: center;
+            color: #b0fff4;
+            display: none;
+        }
+        .modal.show {
+            display: block;
+        }
+
+        .btn {
+            font-size: 20px;
+            border: none;
+            padding: 10px;
+            background-color: #b0fff4;
+            color: #034141;
+        }
+        .btn:hover {
+            cursor: pointer;
+            background-color: #EEE;
+            color: #111;
+        }
+    </style>
 </head>
 <body>
     <canvas id="canvas" width="550" height="600"></canvas>
+    <div class="modal">
+        <h1>Game Over!</h1>
+        <button class="btn">Play Again</button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>

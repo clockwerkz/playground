@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* MOBILE CSS Document */
+
+:root {
+ --muted-yellow:#f5bf8d;
+ --mint:#b1cdbe;
+ --coffee:#4e454a;
+ --mud: #968b8b;
+ --pink:#ea7c95;
+}
+
+
+@media screen and (max-width: 550px) {
+
+    #header {
+        position: fixed;
+    }
+
+    a, a:link {
+        color: var(--muted-yellow);
+    }
+
+
+    nav {
+        position: fixed;
+        width: 100%;
+        background-color: none;
+        z-index: 100;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2rem;
+        background-color: white;
+    }
+    .navbar img {
+        width: 120px; 
+        height: auto;
+    }
+
+    #mobile-btn {
+        display: block;
+    }
+
+    .navbar-items {
+        position: absolute;
+        width: 100%;
+        top: 80px;
+        background-color: white;
+        text-align: center;
+        z-index: -3;
+        transition: all 0.25s ease-in;
+    }
+
+    /* .navbar-items.hide {
+        top: -300px;
+    } */
+
+    .navbar-items li {
+        list-style: none;
+        padding: 1rem 0;
+    }
+
+    .navbar-items li a {
+        font-size: 2rem;
+    }
+
+    .light-power--left, .light-power--right {
+        font-size: 2.5rem;
+    }
+    @keyframes fast-right {
+    0% {
+        right: -1800px;
+    }
+    10% {
+        right: -50px;
+    }
+    20% {
+        right: -40px;
+    }
+    70% {
+        right: -10px;
+        filter:blur(0px);
+        opacity: 1;
+    }
+    100% {
+        right: -10px;
+        filter:blur(500px);
+        opacity: .3;
+    }
+}
+
+.instagram-images {
+    flex-wrap: wrap;
+}
+
+.instagram-images li {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+footer {
+    padding: 2rem 2rem;
+}
+
+.merchandise button {
+    width: 100%;
+}
+
+.merchandise {
+    background-color: white;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#one {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    mix-blend-mode: hard-light;
+    background-color: rgb(35, 54, 73);
+}
+
+.background-name {
+    display: none;
+    position: relative;
+    width: 100%;
+    padding-top: 200px;
+    font-size: 3rem;
+    line-height: 3rem;
+    z-index: 1;
+    color:white;
+    opacity: 0;
+    background: rgb(168, 178, 187);
+    
+}
+
+#one .rings {
+    width: 250px;
+}
+
+
+}

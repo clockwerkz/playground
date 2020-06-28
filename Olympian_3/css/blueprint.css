@@ -1,0 +1,560 @@
+/**
+ * Lemon v1.0.1 (https://appalaszynski.github.io/lemon/))
+ * Copyright (c) 2018 appalaszynski (https://github.com/appalaszynski)
+ * Licensed under MIT (https://github.com/appalaszynski/lemon/blob/master/LICENSE)
+ */
+/**
+ * Responsive Breakpoint Manager 
+ *
+ * 0px - 600px:       Small
+ * 600px - 900px:     Medium
+ * 900px - 1100px:    Large
+ * 1800px - 2699px:   Huge
+ * 2800px - more:     Extra
+ */
+/**
+ * Basic reset of font-size, box-sizing, margin and padding.
+ *
+ * 1. Thanks to this declaration You can easily build layout based on rem unit.
+ *    The rem unit is relative to the font-size of the root element html.
+ *    By default html element font size is 16px, but px-to-percent function converts it to 10px.
+ *    Therefore from now 1rem is equal to 10px.
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  /* 1 */
+}
+
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+/* Media */
+img {
+  max-width:100%;
+	width:100%;
+  height:auto;
+  border:0;
+}
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
+}
+.video-container iframe, .video-container object, .video-container embed, .video-container video {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  /*padding: 0 2rem;*/
+  width: 100%;
+	
+}
+
+.container.medium {
+  max-width: 100rem;
+}
+
+.container.small {
+  max-width: 80rem;
+}
+.box { 
+
+	display: flex;
+	text-align: center;
+	 justify-content: center;
+  align-items: center;
+	min-height: 500px;
+ }
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.row_lg {display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+	align-items: flex-start;}
+/* Justify Row */
+.justify-start {
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+}
+.justify-end {-webkit-justify-content:flex-end;-moz-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;}
+.justify-center {-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.justify-space {-webkit-justify-content:space-between;-moz-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
+.justify-around {-webkit-justify-content:space-around;justify-content:space-around;}
+
+/* Row Direction */
+.reverse {
+  -webkit-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve, .fifths, .half, .third, .noflex {
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+.twelve {width:100%;}
+.eleven {width:calc(100%/12 * 11);}
+.ten {width:calc(100%/12 * 10);}
+.nine {width:75%;}
+.eight {width:calc(100%/12 * 8);}
+.seven {width:calc(100%/12 * 7);}
+.six, .half {width:50%;}
+.five {width:calc(100%/12 * 5);}
+.four, .third  {width:calc(100%/12 * 4);}
+.three {width:25%;}
+.two {width:calc(100%/12 * 2);}
+.one {width:calc(100%/12);}
+.fifths {width:20%;}
+
+/* ORDERING */
+.o1, .o1-large {-ms-flex-order: 1;-webkit-order: 1;order: 1;}
+.o2, .o2-large {-ms-flex-order: 2;-webkit-order: 2;order: 2;}
+.o3, .o3-large {-ms-flex-order: 3;-webkit-order: 3;order: 3;}
+.o4, .o4-large {-ms-flex-order: 4;-webkit-order: 4;order: 4;}
+.o5, .o5-large {-ms-flex-order: 5;-webkit-order: 5;order: 5;}
+.o6, .o6-large {-ms-flex-order: 6;-webkit-order: 6;order: 6;}
+.o7, .o7-large {-ms-flex-order: 7;-webkit-order: 7;order: 7;}
+.o8, .o8-large {-ms-flex-order: 8;-webkit-order: 8;order: 8;}
+.o9, .o9-large {-ms-flex-order: 9;-webkit-order: 9;order: 9;}
+.o10, .o10-large {-ms-flex-order: 10;-webkit-order: 10;order: 10;}
+.o11, .o11-large {-ms-flex-order: 11;-webkit-order: 11;order: 11;}
+.o12, .o12-large {-ms-flex-order: 12;-webkit-order: 12;order: 12;}
+
+/* ALIGNMENT */
+.align-top {
+  -webkit-align-items:flex-start; -ms-flex-align:start; align-items:flex-start;
+  -webkit-align-self:flex-start; -ms-flex-item-align:start; align-self:flex-start;
+}
+.align-bottom {
+  -webkit-align-items:flex-end; -ms-flex-align:end; align-items:flex-end;
+  -webkit-align-self:flex-end; -ms-flex-item-align:end; align-self:flex-end;
+}
+.align-center {
+  -webkit-align-items:center; -ms-flex-align:center; align-items:center;
+  -webkit-align-self:center; -ms-flex-item-align:center; align-self:center;
+}
+.align-baseline {
+  -webkit-align-items:baseline; -ms-flex-align:baseline; align-items:baseline;
+}
+.align-stretch {
+  -webkit-align-items:stretch; -ms-flex-align:stretch; align-items:stretch;
+}
+
+
+/*640 px single column*/
+@media (max-width: 40em) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+	.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve, .fifths, .half, .third, .noflex {width:100%;}
+}
+
+.column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0 1.0rem;
+	/*outline: thin grey solid;*/
+	
+}
+
+.column.column-50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+	
+}
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: table;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.mb {
+  margin-bottom: 2rem;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  background-color: #dbbb2b;
+  border: 0.1rem solid #dbbb2b;
+  border-radius: 0.4rem;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 3.8rem;
+  padding: 0 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+
+.btn:focus, .btn:hover,
+.btn:link:focus,
+.btn:link:hover,
+.btn:visited:focus,
+.btn:visited:hover,
+button:focus,
+button:hover,
+input[type='button']:focus,
+input[type='button']:hover,
+input[type='reset']:focus,
+input[type='reset']:hover,
+input[type='submit']:focus,
+input[type='submit']:hover {
+  background-color: #b4991f;
+  border: 0.1rem solid #b4991f;
+  outline: 0;
+  color: white;
+}
+
+.btn:disabled,
+.btn:link:disabled,
+.btn:visited:disabled,
+button:disabled,
+input[type='button']:disabled,
+input[type='reset']:disabled,
+input[type='submit']:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.btn:disabled:focus, .btn:disabled:hover,
+.btn:link:disabled:focus,
+.btn:link:disabled:hover,
+.btn:visited:disabled:focus,
+.btn:visited:disabled:hover,
+button:disabled:focus,
+button:disabled:hover,
+input[type='button']:disabled:focus,
+input[type='button']:disabled:hover,
+input[type='reset']:disabled:focus,
+input[type='reset']:disabled:hover,
+input[type='submit']:disabled:focus,
+input[type='submit']:disabled:hover {
+  background-color: #dbbb2b;
+  border-color: #dbbb2b;
+}
+
+.btn.outline,
+.btn:link.outline,
+.btn:visited.outline,
+button.outline,
+input[type='button'].outline,
+input[type='reset'].outline,
+input[type='submit'].outline {
+  background-color: transparent;
+  color: #dbbb2b;
+}
+
+.btn.outline:focus, .btn.outline:hover,
+.btn:link.outline:focus,
+.btn:link.outline:hover,
+.btn:visited.outline:focus,
+.btn:visited.outline:hover,
+button.outline:focus,
+button.outline:hover,
+input[type='button'].outline:focus,
+input[type='button'].outline:hover,
+input[type='reset'].outline:focus,
+input[type='reset'].outline:hover,
+input[type='submit'].outline:focus,
+input[type='submit'].outline:hover {
+  color: #b4991f;
+}
+
+.btn.outline:disabled:focus, .btn.outline:disabled:hover,
+.btn:link.outline:disabled:focus,
+.btn:link.outline:disabled:hover,
+.btn:visited.outline:disabled:focus,
+.btn:visited.outline:disabled:hover,
+button.outline:disabled:focus,
+button.outline:disabled:hover,
+input[type='button'].outline:disabled:focus,
+input[type='button'].outline:disabled:hover,
+input[type='reset'].outline:disabled:focus,
+input[type='reset'].outline:disabled:hover,
+input[type='submit'].outline:disabled:focus,
+input[type='submit'].outline:disabled:hover {
+  background-color: inherit;
+  border-color: inherit;
+  color: #dbbb2b;
+}
+
+.btn.btn-full,
+.btn:link.btn-full,
+.btn:visited.btn-full,
+button.btn-full,
+input[type='button'].btn-full,
+input[type='reset'].btn-full,
+input[type='submit'].btn-full {
+  display: block;
+  width: 100%;
+}
+
+code {
+  background-color: #f6f6f6;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  font-size: 120%;
+  border-radius: 0.4rem;
+  margin: 0 0.2rem;
+}
+
+pre {
+  background-color: #f6f6f6;
+  overflow-y: scroll;
+  padding: 1rem;
+  border-bottom: 0.4rem solid #dbbb2b;
+  margin-bottom: 2rem;
+}
+
+pre > code {
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+blockquote {
+  border-left: 0.4rem solid #dbbb2b;
+  padding: 1rem 2rem;
+  background-color: #f6f6f6;
+  margin-bottom: 2rem;
+}
+
+blockquote *:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+}
+
+hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 0.1rem solid #dbbb2b;
+}
+
+a,
+a:link
+ {
+  color: #dbbb2b;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active,
+a:link:hover,
+a:link:focus,
+a:link:active,
+a:visited:hover,
+a:visited:focus,
+a:visited:active {
+  color: #b4991f;
+  outline: 0;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+input[type='color'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime'],
+input[type='datetime-local'],
+input:not([type]),
+textarea,
+select {
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0.1rem solid #363c41;
+  font-size: 1.6rem;
+  border-radius: .4rem;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  height: 3.8rem;
+  padding: .6rem 1.0rem;
+  margin-bottom: 1.5rem;
+  color: #363c41;
+}
+
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='url']:focus,
+input[type='color']:focus,
+input[type='date']:focus,
+input[type='month']:focus,
+input[type='week']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input:not([type]):focus,
+textarea:focus,
+select:focus {
+  border-color: #dbbb2b;
+  outline: 0;
+}
+
+textarea {
+  min-height: 6.5rem;
+}
+
+label,
+legend {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+select {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
+}
+
+.label-inline {
+  display: inline-block;
+  font-weight: normal;
+  margin-left: .5rem;
+  margin-bottom: 0;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #363c41;
+}
+
+dl,
+ol,
+ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ol ol,
+ol ul,
+ul dl,
+ul ol,
+ul ul {
+  margin: 0 0 0 1.5rem;
+}
+
+ol {
+  list-style: decimal inside;
+}
+
+ul {
+  list-style: circle inside;
+}
+
+dd {
+  -webkit-margin-start: 40px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 0.1rem solid #dbbb2b;
+  padding: 1rem;
+}
+
+thead th {
+  border-bottom: 2px solid #dbbb2b;
+}
