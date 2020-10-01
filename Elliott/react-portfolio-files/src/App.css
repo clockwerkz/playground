@@ -1,0 +1,29 @@
+.hero {
+  height: 80vh;
+}
+
+a {
+  color: #eee;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footer {
+  color: white;
+}
+
+.footer-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
