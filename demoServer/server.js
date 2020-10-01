@@ -41,6 +41,13 @@ async function authenticate(req, res, next) {
     next();
 }
 
+app.get('/ip', (req,res) => {
+    console.log('ip route hit');
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    console.log('ip', ip);
+    return res.status(200).send();
+});
+
 app.use(authenticate);
 
 //Protect API route
